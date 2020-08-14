@@ -1,3 +1,23 @@
+# quick start
+
+docker-composeファイルに記載されているIPアドレスを自身のアドレスに変更し以下のコマンドを実行する。
+```bash
+# 環境イメージの構築
+docker-compose up -d
+# Go言語の環境にログイン
+docker-compose exec golang /bin/bash
+# 環境が不要になった場合
+docker-compose down
+```
+go言語の操作
+```bash
+# 作成したアプリケーションをインストール
+go install first_webapp
+#アプリケーションを実行.
+first_webapp
+```
+
+
 # GO実践入門
 
 ## HTTPリクエスト
