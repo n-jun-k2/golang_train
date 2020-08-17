@@ -3,6 +3,7 @@ services:
   golang:
     build:
       context: .
+      dockerfile: ./Docker/golang/Dockerfile
     tty: true
     volumes:
         - ./src:/tmp/app
@@ -10,3 +11,15 @@ services:
       - "local_dev:192.168.11.8"
     ports:
       - "8080:8080"
+  db:
+    build:
+      context: .
+      dockerfile: ./Docker/postgres/Dockerfile
+    ports:
+      - "5432:5432"
+    environment:
+      - POSTGRES_USER=user
+      - POSTGRES_PASSWORD=secret1234
+      - POSTGRES_DB=app_db
+    volumes:
+      - ./db/data:/var/lib/postgressql/data
