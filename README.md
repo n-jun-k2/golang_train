@@ -1,5 +1,7 @@
 # quick start
 
+Dockerの設定から「Resources　File sharing」にCドライブを追加する事。
+
 docker-composeファイルに記載されているIPアドレスを自身のアドレスに変更し以下のコマンドを実行する。
 ```bash
 # 環境イメージの構築
