@@ -36,10 +36,6 @@ func index(w http.ResponseWriter, r *http.Request){
 func main() {
 	// マルチプレクサの生成を行う。
 	mux := http.NewServeMux()
-	// マルチプレクサの静的なファイル返送を行う。
-	files := http.FileServer(http.Dir("/public"))
-	// リクエストのURLパスからプレフィックスを削除する /satic/で始まる全てのリクエストURLから文字列/static/を取り去る。
-	mux.Handle("/static/", http.StripPrefix("/static/", files))
 	/* ルートURLをハンドラ関数にリダイレクトする
 		第一引数：URL
 		第二引数：ハンドラ関数名
