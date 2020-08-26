@@ -17,7 +17,7 @@ func main(){
 
 	// Db: データベースに接続する為のハンドラ
 	var Db *sql.DB
-	Db, err := sql.Open("postgres", "host=db user=user password=secret1234 dbname=app_db sslmode=disable")
+	Db, err := sql.Open("postgres", "host=postgres user=user password=secret1234 dbname=app_db sslmode=disable")
 	if err != nil {
 		fmt.Printf("ERROR: %s", err)
 	}

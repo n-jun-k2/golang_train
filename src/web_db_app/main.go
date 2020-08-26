@@ -30,7 +30,7 @@ func generate_web(w http.ResponseWriter, files []string, str interface {}){
 
 func query_send(query string, param ... interface {}) []string {
 
-	Db, err := sql.Open("postgres", "host=db user=user password=secret1234 dbname=app_db sslmode=disable")
+	Db, err := sql.Open("postgres", "host=postgres user=user password=secret1234 dbname=app_db sslmode=disable")
 	printLog(err)
 
 	pstatement, err := Db.Prepare(query)
